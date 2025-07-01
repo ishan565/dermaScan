@@ -43,7 +43,20 @@ dermaScan/
 * **Frontend**: React, Tailwind CSS, TensorFlow.js
 * **Backend**: Node.js, Express, MongoDB
 * **Authentication**: JWT
-* **AI**: Pre-trained skin cancer detection model in TF.js
+* AI Model
+DermaScan-AI uses a custom-trained Convolutional Neural Network (CNN) built with TensorFlow.js to analyze skin lesion images directly in the browser. The model classifies uploaded images into two categories:
+
+Malignant (possibly cancerous)
+
+Benign (non-cancerous)
+
+Key features:
+
+Runs fully in the browser — ensuring user privacy as no images are uploaded to any server.
+
+Delivers real-time predictions with a clear confidence percentage.
+
+Built using TensorFlow.js for smooth and responsive web integration.
 * **LLM Integration**: OpenAI / Gemini API (custom advice based on result)
 
 ---
@@ -130,7 +143,3 @@ npm run dev
 Feel free to connect on [LinkedIn]([https://linkedin.com/](https://www.linkedin.com/in/ishan-gupta-7b1078281/) or contribute to the repo!
 
 ---
-
-## 📜 License
-
-MIT License. Use it freely, just don’t forget to give credit!
