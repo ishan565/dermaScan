@@ -61,6 +61,15 @@ Built using TensorFlow.js for smooth and responsive web integration.
 * **LLM Integration**: OpenAI / Gemini API (custom advice based on result)
 
 ---
+<p float="left">
+  <img src="interface.png" width="48%"/>
+  <img src="signup.png" width="48%"/>
+</p>
+
+<p align="center">
+  <img src="login.png" width="48%"/>
+</p>
+---
 
 ## ⚙️ Setup Instructions
 
