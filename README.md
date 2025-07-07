@@ -38,6 +38,10 @@ dermaScan/
 ```
 
 ---
+<p align="center">
+  <img src="interface.png" width="48%"/>
+</p>
+---
 
 ## 🛠 Tech Stack
 
@@ -62,13 +66,10 @@ Built using TensorFlow.js for smooth and responsive web integration.
 
 ---
 <p float="left">
-  <img src="interface.png" width="48%"/>
+  <img src="login" width="48%"/>
   <img src="signup.png" width="48%"/>
 </p>
 
-<p align="center">
-  <img src="login.png" width="48%"/>
-</p>
 ---
 
 ## ⚙️ Setup Instructions
