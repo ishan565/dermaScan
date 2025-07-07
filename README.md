@@ -14,7 +14,8 @@
 * 💡 Responsive & user-friendly UI built with React + Tailwind
 
 ---
-
+![Dashboard](dash.png)
+---
 ## 📁 Project Structure
 
 ```
