@@ -39,7 +39,7 @@ dermaScan/
 
 ---
 <p align="center">
-  <img src="interface.png" width="48%"/>
+  <img src="interface.png" width="78%"/>
 </p>
 ---
 
