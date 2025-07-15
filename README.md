@@ -66,8 +66,8 @@ Built using TensorFlow.js for smooth and responsive web integration.
 
 ---
 <p float="left">
-  <img src="login.png" width="48%"/>
-  <img src="signup.png" width="48%"/>
+  <img src="login.png" width="78%"/>
+  <img src="signup.png" width="78%"/>
 </p>
 
 ---
