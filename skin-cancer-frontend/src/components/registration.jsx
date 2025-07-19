@@ -78,6 +78,7 @@ const Registration = ({ onLoginSuccess }) => {
       console.error("Auth Error:", err.response || err);
     }
   };
+  
   return (
 <div className="w-screen h-screen overflow-hidden flex items-center justify-center bg-gradient-to-br from-[#232b38] to-[#181e29] font-inter">
 

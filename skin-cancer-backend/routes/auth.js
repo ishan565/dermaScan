@@ -4,7 +4,7 @@ const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-// Register Route
+
 router.post("/register", async (req, res) => {
   const { email, password } = req.body;
 
@@ -23,12 +23,12 @@ router.post("/register", async (req, res) => {
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
     res.status(201).json({ token });
   } catch (err) {
-    console.error("❌ Register Error:", err);
+    console.error(" Register Error:", err);
     res.status(500).json({ msg: "Server error" });
   }
 });
 
-// Login Route
+
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
@@ -47,7 +47,7 @@ router.post("/login", async (req, res) => {
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
     res.json({ token });
   } catch (err) {
-    console.error("❌ Login Error:", err);
+    console.error(" Login Error:", err);
     res.status(500).json({ msg: "Server error" });
   }
 });

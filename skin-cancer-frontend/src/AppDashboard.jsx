@@ -44,7 +44,7 @@ function App() {
   };
   const getAdvice = async (prompt) => {
   try {
-    const res = await fetch("http://localhost:5000/api/advice", {
+    const res = await fetch("http://localhost:5002/api/advice", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -63,8 +63,8 @@ function App() {
  const handleAnalyze = async () => {
   if (!image || !model) return;
   setLoading(true);
-  setResult("");        // clear previous result
-  setLLMAdvice("");     // clear previous advice
+  setResult("");      
+  setLLMAdvice("");
 
   const reader = new FileReader();
   reader.onloadend = () => {
@@ -77,33 +77,29 @@ function App() {
           .fromPixels(img)
           .resizeNearestNeighbor([224, 224])
           .toFloat()
-          .expandDims() // shape becomes [1, 224, 224, 3]
+          .expandDims() 
       );
 
-      try {
-        const data = await model.executeAsync(tensor);
-        const prediction = await data.data(); // Float32Array
-        const label = prediction[0] > 0.5 ? "Malignant" : "Benign";
-        const confidence = (prediction[0] * 100).toFixed(2);
-        setResult(`${label} (${confidence}%)`);
+  try {
+  const data = model.execute(tensor); 
+  const prediction = await data.data(); 
+  const label = prediction[0] > 0.5 ? "Malignant" : "Benign";
+  const confidence = (prediction[0] * 100).toFixed(2);
+  setResult(`${label} (${confidence}%)`);
+  
+  let prompt = label === "Malignant"
+    ? "Give medical advice or next steps for a user whose skin lesion appears malignant."
+    : "Give daily skincare and sunscreen precautions for benign skin issues.";
 
-        // 🌟 LLM integration
-        let prompt = "";
-        if (label === "Malignant") {
-          prompt = "Give medical advice or next steps for a user whose skin lesion appears malignant.";
-        } else {
-          prompt = "Give daily skincare and sunscreen precautions for benign skin issues.";
-        }
+  const llmResponse = await getAdvice(prompt); 
+  setLLMAdvice(llmResponse); 
 
-        const llmResponse = await getAdvice(prompt); // define this function separately
-        setLLMAdvice(llmResponse); // show advice to user
-
-        data.dispose();
-        tensor.dispose();
-      } catch (err) {
-        console.error("❌ Prediction error:", err);
-        setResult("Prediction failed.");
-      }
+  data.dispose();
+  tensor.dispose();
+} catch (err) {
+  console.error("❌ Prediction error:", err);
+  setResult("Prediction failed.");
+}
 
       setLoading(false);
     };
@@ -119,7 +115,7 @@ function App() {
     { id: "settings", label: "Settings", icon: "⚙️" }
   ];
 
-  // Updated color scheme: Modern medical aesthetic
+  
   const styles = {
     container: {
       display: "flex",
