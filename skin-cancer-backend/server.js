@@ -13,7 +13,7 @@ app.use(express.json());
 
 
 app.post("/api/advice", (req, res) => {
-  res.json({ advice: "Stay hydrated and apply sunscreen! 💧☀️" });
+  res.json({ advice: "Healthy skin begins with daily habits. Start by drinking at least 8 glasses of water a day to keep your skin hydrated from within. Always apply a broad-spectrum sunscreen with SPF 30 or higher, even on cloudy days or indoors, as UV rays can still cause damage. At night, gently cleanse your face to remove dirt and oils, and use a moisturizer suited to your skin type. Avoid touching your face frequently, get enough sleep, and follow a balanced diet rich in antioxidants and vitamins. These simple steps go a long way in keeping your skin clear, youthful, and protected. 💧☀️" });
 });
 
 
