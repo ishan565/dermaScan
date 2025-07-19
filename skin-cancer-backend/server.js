@@ -4,7 +4,7 @@ const app = express();
 
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173","https://derma-scan-nine.vercel.app/"],
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type"],
 }));
