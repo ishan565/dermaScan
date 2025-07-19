@@ -1,12 +1,16 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { ENV } from "@tensorflow/tfjs";
 
-const genAI = new GoogleGenerativeAI(ENV.API);
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API);
 
 export async function getAdvice(prompt) {
   const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
-  return response.text();
+  try {
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    return response.text();
+  } catch (error) {
+    console.error("Error generating advice:", error);
+    return "Sorry, I couldn't generate advice right now.";
+  }
 }

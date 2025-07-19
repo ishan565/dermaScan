@@ -44,7 +44,7 @@ function App() {
   };
   const getAdvice = async (prompt) => {
   try {
-    const res = await fetch("http://localhost:5002/api/advice", {
+    const res = await fetch("https://dermascan-o2je.onrender.com/api/advice", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
